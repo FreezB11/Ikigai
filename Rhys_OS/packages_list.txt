@@ -1,4 +1,2 @@
-binutils
-gcc
 make
 nasm
