@@ -2,6 +2,3 @@ binutils
 gcc
 make
 nasm
-
-
-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
