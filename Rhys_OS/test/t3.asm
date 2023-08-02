@@ -1,7 +1,7 @@
 @ org 0x7c00 ;offset
 
 
-mov al, 13h
+mov al, 00
 mov ah, 00
 int 10h
 
