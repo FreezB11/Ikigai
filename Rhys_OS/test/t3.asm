@@ -1,4 +1,8 @@
-org 0x7c00 ;offset
+@ org 0x7c00 ;offset
+
+mov al, 13h
+mov ah, 00
+int 10h
 
 jmp $
 
