@@ -7,7 +7,7 @@ const publicKey = Buffer.from(
   fs.readFileSync("src/key/public.pem", { encoding: "utf-8" })
 );
 
-function encrypt(val:string):string{
+function encrypt_password(val:string):string{
   const encryptedData = crypto.publicEncrypt(
     {
       key: publicKey,
@@ -19,3 +19,5 @@ function encrypt(val:string):string{
   const data = encryptedData.toString("base64")
   return data
 }
+
+export default {encrypt_password} as const;
