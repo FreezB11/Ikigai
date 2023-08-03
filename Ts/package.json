@@ -4,7 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "yaml-test":"nodemon src/yaml.test.ts",
     "test": "nodemon test/crypt.test.ts",
+    "keygen":"nodemon src/crypto/keygen.ts",
     "debug": "node inspect src/app.ts",
     "start": "nodemon www/www.ts"
   },

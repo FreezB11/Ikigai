@@ -6,8 +6,7 @@ const publicKey = Buffer.from(
   fs.readFileSync("src/key/public.pem", { encoding: "utf-8" })
 );
 
-const secret = 'abcdefg';
 const hash = crypto.createHmac('sha256', publicKey)
-               .update('I love cupcakes')
+               .update('yash')
                .digest('hex');
 console.log(hash);
