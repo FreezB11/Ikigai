@@ -48,5 +48,4 @@ app.post('/',(req:Request,res:Response,next:NextFunction)=>{
 })
 
 app.use('/db',dbroute)
-
 export = app; httpServer;
