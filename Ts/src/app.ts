@@ -26,15 +26,11 @@ app.use(express.urlencoded({extended: true}));
 // app.use(express.static('public'));
 app.use(express.static(__dirname + '/public'));
 
-// Example for other olders
-// app.use('/css', express.static(__dirname + 'public/css'))
 
 
+app.get('/login',login.login )
 
-
-app.get('/',login.login )
-
-app.post('/',(req:Request,res:Response,next:NextFunction)=>{
+app.post('/login',(req:Request,res:Response,next:NextFunction)=>{
     const username = req.body.username
     const mail = req.body.email
     const password = req.body.password
