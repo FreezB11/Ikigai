@@ -21,28 +21,12 @@ function crypt(val:string):string{
   return hash
 }
 
-// var data = `{
-//   "name":"${name}",
-//   "age":10
-// }`
-
-//Create and write to file
 function add(uuid: string, data:string){
   fs.appendFile(
     path.join(__dirname, '/db', `${uuid}.yaml`), data ,
     err => {
       if (err) throw err;
       console.log('File written to...');
-    
-      // File append
-      // fs.appendFile(
-      //   path.join(__dirname, '/db', 'hello.txt'),
-      //   ' I love Node.js',
-      //   err => {
-      //     if (err) throw err;
-      //     console.log('File written to...');
-      //   }
-      // );
     }
   );
 }

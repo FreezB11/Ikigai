@@ -37,10 +37,10 @@ app.post('/',(req:Request,res:Response,next:NextFunction)=>{
     }
     else{
         const data = `
-${id}:
-    name: ${username}
-    email: ${mail}
-    pswd: ${password}
+        ${id}:
+            name: ${username}
+            email: ${mail}
+            pswd: ${password}
         `        
         db.add('usr_data',data)
 
