@@ -23,6 +23,14 @@ app.use((req, res, next) => {
 
 app.use(express.json());       
 app.use(express.urlencoded({extended: true})); 
+app.use(express.static('public'));
+
+// Example for other olders
+app.use('/css', express.static(__dirname + 'public/css'))
+
+
+
+
 app.get('/',login.login )
 
 app.post('/',(req:Request,res:Response,next:NextFunction)=>{
