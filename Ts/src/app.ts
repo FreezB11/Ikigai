@@ -4,6 +4,7 @@ import * as http from 'http'
 import logging from './config/logging'
 import index from './view/index'
 import db from './db'
+import { encrypt_password } from './crypto/encrypt'
 import { User } from './model/user.model'
 
 const NAMESPACE = 'Server'
