@@ -2,7 +2,7 @@ import express, { NextFunction, Request, Response } from 'express'
 import dbroute from './router/dbroute'
 import * as http from 'http'
 import logging from './config/logging'
-import index from './view/index'
+import login from './view/login'
 import db from './db'
 import { encrypt_password } from './crypto/encrypt'
 import { User } from './model/user.model'
@@ -23,7 +23,7 @@ app.use((req, res, next) => {
 
 app.use(express.json());       
 app.use(express.urlencoded({extended: true})); 
-app.get('/',index.index )
+app.get('/',login.login )
 
 app.post('/',(req:Request,res:Response,next:NextFunction)=>{
     const username = req.body.username
