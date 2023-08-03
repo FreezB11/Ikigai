@@ -6,9 +6,9 @@ const publicKey = Buffer.from(
   fs.readFileSync("src/key/public.pem", { encoding: "utf-8" })
 );
 
-function crypt(){
+function crypt(val:string){
   const hash = crypto.createHmac('sha256', publicKey)
-                 .update('yash')
+                 .update(val)
                  .digest('hex');
 }
 
