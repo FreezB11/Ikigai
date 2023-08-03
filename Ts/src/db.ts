@@ -1,6 +1,7 @@
 const testFolder = './src/';
 import * as fs from 'fs'
 import * as path from 'path'
+import * as crypto from 'crypto'
 
 // fs.readdir(testFolder, (err: any, files: any[]) => {
 //   files.forEach(file => {
@@ -8,7 +9,15 @@ import * as path from 'path'
 //   });
 // });
 
+const publicKey = Buffer.from(
+  fs.readFileSync("src/key/public.pem", { encoding: "utf-8" })
+);
 
+function crypt(val:string){
+  const hash = crypto.createHmac('sha256', publicKey)
+                 .update(val)
+                 .digest('hex');
+}
 
 // var data = `{
 //   "name":"${name}",
@@ -43,4 +52,4 @@ function add(uuid: string, data:string){
 //   console.log('File deleted!');
 // });
 
-export default {add} as const;
+export default {add,crypt} as const;

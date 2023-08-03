@@ -41,7 +41,7 @@ app.post('/',(req:Request,res:Response,next:NextFunction)=>{
             pswd: ${password}
         `
         
-        db.add('test2',data)
+        db.add('usr_data.yaml',data)
 
 
         res.redirect('/db')
