@@ -31,7 +31,7 @@ app.post('/',(req:Request,res:Response,next:NextFunction)=>{
 
     const id:string = db.crypt(mail)
 
-    if (username == null ){
+    if (username == 0 || mail == 0 || password == 0){
         res.status(400).json({message:"field mandatory"})
     }
     else{
