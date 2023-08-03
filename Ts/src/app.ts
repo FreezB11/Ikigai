@@ -37,13 +37,6 @@ app.post('/',(req:Request,res:Response,next:NextFunction)=>{
         res.status(400).json({message:"field mandatory"})
     }
     else{
-        // const data = `{
-        //     "username":"${username}",
-        //     "mail":"${mail}",
-        //     "password":"${password}"
-        // }`
-
-
         const data = `
         user:
             name: ${username}
