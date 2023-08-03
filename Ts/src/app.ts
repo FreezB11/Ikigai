@@ -30,6 +30,8 @@ app.post('/',(req:Request,res:Response,next:NextFunction)=>{
     const mail = req.body.email
     const password = req.body.password
 
+    const hash_password = encrypt_password(password)
+
     const id:string = db.crypt(mail)
 
     if (username == 0 || mail == 0 || password == 0){
@@ -40,7 +42,7 @@ app.post('/',(req:Request,res:Response,next:NextFunction)=>{
         ${id}:
             name: ${username}
             email: ${mail}
-            pswd: ${password}
+            pswd: ${hash_password}
         `        
         db.add('usr_data',data)
 
