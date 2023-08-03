@@ -23,15 +23,12 @@ app.use((req, res, next) => {
 
 app.use(express.json());       
 app.use(express.urlencoded({extended: true})); 
-
 app.get('/',index.index )
 
 app.post('/',(req:Request,res:Response,next:NextFunction)=>{
     const username = req.body.username
     const mail = req.body.email
     const password = req.body.password
-
-
 
     if (username == null ){
         res.status(400).json({message:"field mandatory"})
