@@ -13,10 +13,12 @@ const publicKey = Buffer.from(
   fs.readFileSync("src/key/public.pem", { encoding: "utf-8" })
 );
 
-function crypt(val:string){
+function crypt(val:string):string{
   const hash = crypto.createHmac('sha256', publicKey)
                  .update(val)
                  .digest('hex');
+
+  return hash
 }
 
 // var data = `{
@@ -26,7 +28,7 @@ function crypt(val:string){
 
 //Create and write to file
 function add(uuid: string, data:string){
-  fs.writeFile(
+  fs.appendFile(
     path.join(__dirname, '/db', `${uuid}.yaml`), data ,
     err => {
       if (err) throw err;
