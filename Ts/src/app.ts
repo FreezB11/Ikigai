@@ -23,10 +23,11 @@ app.use((req, res, next) => {
 
 app.use(express.json());       
 app.use(express.urlencoded({extended: true})); 
-app.use(express.static('public'));
+// app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 
 // Example for other olders
-app.use('/css', express.static(__dirname + 'public/css'))
+// app.use('/css', express.static(__dirname + 'public/css'))
 
 
 
