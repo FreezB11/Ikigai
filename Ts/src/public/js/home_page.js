@@ -6,6 +6,8 @@ let amount = 8000;
 let speed = 1;
 let size = 10;
 
+const canvas = document.getElementById("canva");
+
 function setup() {
   createCanvas(windowWidth,windowHeight)
   background(10)
@@ -30,30 +32,5 @@ function draw() {
   }
 }
 
-// frame=0,
-// particles=[],
-// artboard=800
-// function draw() {
-  
-//   if ( frame > 100 ) return;
-    
-//   if(frame==0){
-//       createCanvas(artboard,artboard);
-//       for(i=0;i<artboard*10;i++){
-//           particles[i]=createVector(random(artboard),random(artboard))
-//       }
-//       background(20)
-//     }
-//     for(particle of particles){
-//         particle.add(
-//           cos(move=noise(particle.x/99,particle.y/99)*TAU),
-//           sin(move)
-//         )
-//         stroke(artboard,frame)
-//         point(
-//           constrain( particle.x, d=artboard/10, e=artboard-d ),
-//           constrain( particle.y, d, e )
-//         )
-//     }
-//     frame++
-// } 
+canvas.setup()
+canvas.draw()

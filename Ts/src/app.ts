@@ -3,6 +3,7 @@ import dbroute from './router/dbroute'
 import * as http from 'http'
 import logging from './config/logging'
 import login from './view/login'
+import home from './view/home'
 import db from './db'
 import { encrypt_password } from './crypto/encrypt'
 import { User } from './model/user.model'
@@ -27,7 +28,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public'));
 
 
-
+app.get('/',home.home)
 app.get('/login',login.login )
 
 app.post('/login',(req:Request,res:Response,next:NextFunction)=>{

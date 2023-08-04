@@ -12,7 +12,9 @@ const home = (req: Request, res: Response, next: NextFunction) => {
         <link rel="stylesheet" type="text/css" href="css/home_page.css">
     </head>
     <body>
-    <script src="js/home_page.js"></script>
+    <canvas id="canva"></canvas>
+    <script src="js/home_page.js">
+    </script>
     </body>
     </html>
     `)
