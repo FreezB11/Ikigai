@@ -31,3 +31,6 @@ function draw() {
     )
   }
 }
+
+setup()
+draw()
