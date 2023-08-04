@@ -31,6 +31,3 @@ function draw() {
     )
   }
 }
-
-canvas.setup()
-canvas.draw()
