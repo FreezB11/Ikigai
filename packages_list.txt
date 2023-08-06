@@ -1,13 +1,3 @@
 make
 sudo apt-get install build-essential qemu nasm
 sudo apt install qemu-system-x86
-bash
-curl
-file
-git 2.x
-mkdir
-rm
-unzip
-which
-xz-utils
-zip
