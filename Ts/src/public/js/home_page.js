@@ -6,7 +6,7 @@ let amount = 8000;
 let speed = 1;
 let size = 10;
 
-const canvas = document.getElementById("canva");
+// const canvas = document.getElementById("canva");
 
 function setup() {
   createCanvas(windowWidth,windowHeight)
@@ -32,5 +32,4 @@ function draw() {
   }
 }
 
-setup()
-draw()
+
