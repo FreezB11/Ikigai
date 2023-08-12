@@ -9,10 +9,10 @@ let size = 10;
 // const canvas = document.getElementById("canva");
 
 function setup() {
-  createCanvas(windowWidth,windowHeight)
+  createCanvas(1794,963)
   background(10)
   
-  stroke(255,50,50, 15)
+  stroke(255,0,0, 10)
   
   for ( var i = 0; i < amount; i++ ) {
     vectors.push(createVector(random(width),random(height)))
@@ -26,8 +26,10 @@ function draw() {
     vector.add(cos(randomisation),sin(randomisation))
     
     point(
-      constrain(vector.x, 100, width-100),
-      constrain(vector.y, 100, height-100)
+      // constrain(vector.x, 100, width-100),
+      // constrain(vector.y, 100, height-100)
+      constrain(vector.x, 0, width),
+      constrain(vector.y, 0, height)
     )
   }
 }
