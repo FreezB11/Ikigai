@@ -14,7 +14,7 @@ const home = (req: Request, res: Response, next: NextFunction) => {
         <link rel="stylesheet" type="text/css" href="css/home_page.css">
     </head>
     <body>
-    <canvas id="canva"></canvas>
+    <!-- <canvas id="canva"></canvas> -->
 
     </body>
     </html>
