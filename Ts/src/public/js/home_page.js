@@ -12,7 +12,7 @@ function setup() {
   createCanvas(1794,963)
   background(10)
   
-  stroke(255,0,0, 10)
+  stroke(255,255,0, 10)
   
   for ( var i = 0; i < amount; i++ ) {
     vectors.push(createVector(random(width),random(height)))
