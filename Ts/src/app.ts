@@ -44,11 +44,10 @@ app.post('/login',(req:Request,res:Response,next:NextFunction)=>{
         res.status(400).json({message:"field mandatory"})
     }
     else{
-        const data = `
-        ${id}:
-            name: ${username}
-            email: ${mail}
-            pswd: ${hash_password}
+        const data = `${id}:
+        name: ${username}
+        email: ${mail}
+        pswd: ${hash_password}
         `        
         db.add('usr_data',data)
 
