@@ -7,6 +7,9 @@ import home from './view/home'
 import db from './db'
 import { encrypt_password } from './crypto/encrypt'
 import { User } from './model/user.model'
+import * as color from 'colors'
+
+color.enable()
 
 const NAMESPACE = 'Server'
 const app = express()

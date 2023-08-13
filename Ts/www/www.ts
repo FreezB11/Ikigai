@@ -1,6 +1,9 @@
 import httpServer from "../src/app"
 import logging from'../src/config/logging';
 import config from '../src/config/config';
+import * as color from 'colors'
+
+color.enable()
 
 const NAMESPACE = 'Server';
 
