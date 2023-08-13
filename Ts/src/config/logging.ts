@@ -1,32 +1,34 @@
+var inf = "INFO"
+
 const info = (namespace: string, message: string, object?: any) => {
     if (object) {
-        console.info(`[${getTimeStamp()}] [INFO] [${namespace}] ${message}`.blue, object);
+        console.info(`[${getTimeStamp().yellow}] [${inf.yellow}] [${namespace}] ${message}`, object);
     } else {
-        console.info(`[${getTimeStamp()}] [INFO] [${namespace}] ${message}`.blue);
+        console.info(`[${getTimeStamp().yellow}] [${inf.yellow}] [${namespace}] ${message}`);
     }
 };
 
 const warn = (namespace: string, message: string, object?: any) => {
     if (object) {
-        console.warn(`[${getTimeStamp()}] [WARN] [${namespace}] ${message}`.blue, object);
+        console.warn(`[${getTimeStamp()}] [WARN] [${namespace}] ${message}`, object);
     } else {
-        console.warn(`[${getTimeStamp()}] [WARN] [${namespace}] ${message}`.blue);
+        console.warn(`[${getTimeStamp()}] [WARN] [${namespace}] ${message}`);
     }
 };
 
 const error = (namespace: string, message: string, object?: any) => {
     if (object) {
-        console.error(`[${getTimeStamp()}] [ERROR] [${namespace}] ${message}`.green, object);
+        console.error(`[${getTimeStamp()}] [ERROR] [${namespace}] ${message}`, object);
     } else {
-        console.error(`[${getTimeStamp()}] [ERROR] [${namespace}] ${message}`.blue);
+        console.error(`[${getTimeStamp()}] [ERROR] [${namespace}] ${message}`);
     }
 };
 
 const debug = (namespace: string, message: string, object?: any) => {
     if (object) {
-        console.debug(`[${getTimeStamp()}] [DEBUG] [${namespace}] ${message}`.blue, object);
+        console.debug(`[${getTimeStamp()}] [DEBUG] [${namespace}] ${message}`, object);
     } else {
-        console.debug(`[${getTimeStamp()}] [DEBUG] [${namespace}] ${message}`.blue);
+        console.debug(`[${getTimeStamp()}] [DEBUG] [${namespace}] ${message}`);
     }
 };
 

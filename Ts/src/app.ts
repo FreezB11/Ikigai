@@ -18,10 +18,10 @@ const httpServer = http.createServer(app)
  
 app.use((req, res, next) => {
     /** Log the req */
-    logging.info(NAMESPACE.blue, `METHOD: [${req.method}] - URL: [${req.url}] - IP: [${req.socket.remoteAddress}]`);
+    logging.info(NAMESPACE.blue, `METHOD: [${req.method.red}] - URL: [${req.url.green}] - IP: [${req.socket.remoteAddress}]`);
     res.on('finish', () => {
         /** Log the res */
-        logging.info(NAMESPACE.blue, `METHOD: [${req.method}] - URL: [${req.url}] - STATUS: [${res.statusCode}] - IP: [${req.socket.remoteAddress}]`);
+        logging.info(NAMESPACE.blue, `METHOD: [${req.method.red}] - URL: [${req.url.green}] - STATUS: [${res.statusCode}] - IP: [${req.socket.remoteAddress}]`);
     })
     next();
 })
