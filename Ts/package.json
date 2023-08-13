@@ -2,7 +2,7 @@
   "name": "yugen",
   "version": "1.2.1",
   "description": "",
-  "main": "app.js",
+  "main": "src/app.ts",
   "scripts": {
     "yaml-test": "nodemon src/yaml.test.ts",
     "test": "nodemon test/crypt.test.ts",
