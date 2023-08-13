@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/FreezB11/Yugen/issues"
   },
-  "homepage": "https://github.com/FreezB11/Web_#readme",
+  "homepage": "https://github.com/FreezB11/Yugen#readme",
   "devDependencies": {
     "@types/express": "^4.17.17",
     "@types/jsonfile": "^6.1.1",
