@@ -1,6 +1,6 @@
 {
-  "name": "web_",
-  "version": "2.8.6",
+  "name": "yugen",
+  "version": "1.2.1",
   "description": "",
   "main": "app.js",
   "scripts": {
