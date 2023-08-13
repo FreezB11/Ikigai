@@ -12,12 +12,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FreezB11/Web_.git"
+    "url": "git+https://github.com/FreezB11/Yugen.git"
   },
   "author": "Yashraj Rao",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/FreezB11/Web_/issues"
+    "url": "https://github.com/FreezB11/Yugen/issues"
   },
   "homepage": "https://github.com/FreezB11/Web_#readme",
   "devDependencies": {
