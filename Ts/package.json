@@ -4,9 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "yaml-test":"nodemon src/yaml.test.ts",
+    "yaml-test": "nodemon src/yaml.test.ts",
     "test": "nodemon test/crypt.test.ts",
-    "keygen":"nodemon src/crypto/keygen.ts",
+    "keygen": "nodemon src/crypto/keygen.ts",
     "debug": "node inspect src/app.ts",
     "start": "nodemon www/www.ts"
   },
@@ -27,8 +27,10 @@
     "nodemon": "^2.0.22"
   },
   "dependencies": {
+    "@types/colors": "^1.2.1",
     "@types/dotenv": "^8.2.0",
     "@types/yaml": "^1.9.7",
+    "colors": "^1.4.0",
     "dotenv": "^16.3.1",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
