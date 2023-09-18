@@ -2,7 +2,7 @@ import express, { NextFunction, Request, Response } from 'express'
 import dbroute from './router/dbroute'
 import * as http from 'http'
 import logging from './config/logging'
-import login from './view/login'
+import register from './view/register'
 import home from './view/home'
 import db from './db'
 import { encrypt_password } from './crypto/encrypt'
@@ -31,9 +31,9 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public'));
 
 app.get('/',home.home)
-app.get('/login',login.login )
+app.get('/register',register.register )
 
-app.post('/login',(req:Request,res:Response,next:NextFunction)=>{
+app.post('/register',(req:Request,res:Response,next:NextFunction)=>{
     const username = req.body.username
     const mail = req.body.email
     const password = req.body.password

@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 
 
-const login = (req: Request, res: Response, next: NextFunction) => {
+const register = (req: Request, res: Response, next: NextFunction) => {
     return res.send(`
     <!DOCTYPE html>
     <html lang="en">
@@ -31,4 +31,4 @@ const login = (req: Request, res: Response, next: NextFunction) => {
     `)
 };
 
-export default {login} 
+export default {register} 
