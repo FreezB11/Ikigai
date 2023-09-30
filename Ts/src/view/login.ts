@@ -13,17 +13,15 @@ const login = (req: Request, res: Response, next: NextFunction) => {
     </head>
     <body>
     <div class="card">
-        <h1>Register</h1>
+        <h1>login</h1>
         <form action="/login" method="post">
-            Username
-            <input type="text" name="username">
             </br>
             Email
             <input types="text" name="email">
             </br>
             Password
             <input type="password" name="password">
-            <button type="submit">Register</button>
+            <button type="submit">login</button>
         </form>
     </div>
     </body>

@@ -3,6 +3,7 @@ import dbroute from './router/dbroute'
 import * as http from 'http'
 import logging from './config/logging'
 import register from './view/register'
+import login from './view/login'
 import home from './view/home'
 import db from './db'
 import { encrypt_password } from './crypto/encrypt'
@@ -55,6 +56,12 @@ app.post('/register',(req:Request,res:Response,next:NextFunction)=>{
 
         res.redirect('/db')
     }
+})
+
+app.get('/login',login.login)
+
+app.post('/login',(req:Request,res:Response,next:NextFunction)=>{
+    
 })
 
 app.use('/db',dbroute)
