@@ -13,8 +13,9 @@ const home = (req: Request, res: Response, next: NextFunction) => {
         <link rel="stylesheet" type="text/css" href="css/home_page.css">
     </head>
     <body>
-    
-
+        <a href="/register">register</a>
+        <br>
+        <a href="/login">login</a>
     </body>
     </html>
     `)
