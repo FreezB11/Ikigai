@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 
 
-const register = (req: Request, res: Response, next: NextFunction) => {
+const login = (req: Request, res: Response, next: NextFunction) => {
     return res.send(`
     <!DOCTYPE html>
     <html lang="en">
@@ -14,7 +14,7 @@ const register = (req: Request, res: Response, next: NextFunction) => {
     <body>
     <div class="card">
         <h1>Register</h1>
-        <form action="/register" method="post">
+        <form action="/login" method="post">
             Username
             <input type="text" name="username">
             </br>
@@ -31,4 +31,4 @@ const register = (req: Request, res: Response, next: NextFunction) => {
     `)
 };
 
-export default {register} 
+export default {login} 
