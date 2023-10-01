@@ -32,7 +32,7 @@ function add(fname: string, username:string,mail:string,password:string){
   email: ${mail}
   pswd: ${hash_password}
   `
-  
+
   fs.appendFile(
     path.join(__dirname, '/db', `${fname}.yaml`), data ,
     err => {
@@ -43,7 +43,7 @@ function add(fname: string, username:string,mail:string,password:string){
 }
 
 function fetch(){
-
+  
 }
 
 // delete file named 'sample.txt'
