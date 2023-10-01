@@ -3,7 +3,7 @@ import * as fs from 'fs'
 import * as path from 'path'
 import * as crypto from 'crypto'
 import * as yaml from 'yaml'
-
+import { encrypt_password } from './crypto/encrypt'
 // fs.readdir(testFolder, (err: any, files: any[]) => {
 //   files.forEach(file => {
 //     console.log(file); ///// here decryption will be done
@@ -22,9 +22,19 @@ function crypt(val:string):string{
   return hash
 }
 
-function add(uuid: string, data:string){
+function add(fname: string, username:string,mail:string,password:string){
+
+  const id:string = crypt(mail)
+  const hash_password = encrypt_password(password)
+
+  const data =`${id}:
+  name: ${username}
+  email: ${mail}
+  pswd: ${hash_password}
+  `
+  
   fs.appendFile(
-    path.join(__dirname, '/db', `${uuid}.yaml`), data ,
+    path.join(__dirname, '/db', `${fname}.yaml`), data ,
     err => {
       if (err) throw err;
       console.log('File written to...');
