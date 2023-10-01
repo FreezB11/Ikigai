@@ -39,21 +39,11 @@ app.post('/register',(req:Request,res:Response,next:NextFunction)=>{
     const mail = req.body.email
     const password = req.body.password
 
-    // const hash_password = encrypt_password(password)
-
-    // const id:string = db.crypt(mail)
-
     if (username == 0 || mail == 0 || password == 0){
         res.status(400).json({message:"field mandatory"})
     }
-    else{
-        // const data = `${id}:
-        // name: ${username}
-        // email: ${mail}
-        // pswd: ${hash_password}
-        // `        
+    else{      
         db.add('usr_data',username,mail,password)
-
         res.redirect('/db')
     }
 })
