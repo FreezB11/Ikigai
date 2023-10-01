@@ -31,6 +31,10 @@ function add(uuid: string, data:string){
   );
 }
 
+function fetch(){
+
+}
+
 // delete file named 'sample.txt'
 // fs.unlink('sample.txt', function (err) {
 //   if (err) throw err;
@@ -38,4 +42,4 @@ function add(uuid: string, data:string){
 //   console.log('File deleted!');
 // });
 
-export default {add,crypt} as const;
+export default {add,crypt,fetch} as const;
