@@ -56,7 +56,7 @@ app.post('/login',(req:Request,res:Response,next:NextFunction)=>{
     const val = db.check(mail)
 
     if (val == true){
-
+        res.redirect('/db')
     }
     else{
         res.status(400).json({message:"User doesn't exist"})
