@@ -4,6 +4,7 @@ import * as path from 'path'
 import * as crypto from 'crypto'
 import * as yaml from 'yaml'
 import { encrypt_password } from './crypto/encrypt'
+import {readFileSync, promises as fsPromises} from 'fs'
 // fs.readdir(testFolder, (err: any, files: any[]) => {
 //   files.forEach(file => {
 //     console.log(file); ///// here decryption will be done
@@ -42,9 +43,20 @@ function add(fname: string, username:string,mail:string,password:string){
   );
 }
 
-function fetch(){
-  
+function check(str:string){
+  const id:string = crypt(str)
+  const contents = fs.readFileSync('src/db/usr_data.yaml','utf8')
+  const result = contents.includes(id)
+
+  return result
+
 }
+
+
+// function check(mail:string){
+//   const id:string = crypt(mail)
+//   checkIfContainsAsync('src/db/usr_data.yaml',id)
+// }
 
 // delete file named 'sample.txt'
 // fs.unlink('sample.txt', function (err) {
@@ -53,4 +65,4 @@ function fetch(){
 //   console.log('File deleted!');
 // });
 
-export default {add,crypt,fetch} as const;
+export default {add,crypt,check} as const;

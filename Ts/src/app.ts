@@ -54,6 +54,15 @@ app.post('/login',(req:Request,res:Response,next:NextFunction)=>{
     const mail = req.body.email
     const password = req.body.password
 
+    const val = db.check(mail)
+
+    if (val == true){
+        
+    }
+    else{
+        res.status(400).json({message:"User doesn't exist"})
+    }
+
     
 })
 
