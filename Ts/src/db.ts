@@ -53,11 +53,6 @@ function check(str:string){
 }
 
 
-// function check(mail:string){
-//   const id:string = crypt(mail)
-//   checkIfContainsAsync('src/db/usr_data.yaml',id)
-// }
-
 // delete file named 'sample.txt'
 // fs.unlink('sample.txt', function (err) {
 //   if (err) throw err;
