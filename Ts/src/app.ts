@@ -9,6 +9,9 @@ import db from './db'
 import { encrypt_password } from './crypto/encrypt'
 import { User } from './model/user.model'
 import * as color from 'colors'
+import * as fs from 'fs'
+import {readFileSync, promises as fsPromises} from 'fs';
+import * as yaml from 'yaml'
 
 color.enable()
 
@@ -56,7 +59,20 @@ app.post('/login',(req:Request,res:Response,next:NextFunction)=>{
     const val = db.check(mail)
 
     if (val == true){
-        res.redirect('/db')
+        const file = fs.readFileSync('src/db/usr_data.yaml', 'utf8')
+        const id = db.crypt(mail)
+        
+        const obj = yaml.parse(file)
+        const t3 = obj.id.pswd
+
+        // if (t3 == encrypt_password(password)){
+        //     res.status(400).json({message:"login success"})
+        // }
+        // else{
+        //     res.status(400).json({message:"login failed"})
+        // }
+
+        // // res.redirect('/db')
     }
     else{
         res.status(400).json({message:"User doesn't exist"})
