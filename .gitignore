@@ -1,4 +1,4 @@
-Ts/node_modules
-Ts/src/db
-Ts/src/key
-Ts/src/.env
+node_modules
+src/db
+src/key
+src/.env
