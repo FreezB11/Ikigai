@@ -5,14 +5,18 @@ const encryptedData = 'nB9ge52VTf73EbVWMovrahO9CewAxER+7HsW6QqMnGeIc6CBWUX5ddw1q
 
 const privateKey = fs.readFileSync("src/key/private.pem", { encoding: "utf-8" });
 
-const decryptedData = crypto.privateDecrypt(
-  {
-    key: privateKey,
-    padding: crypto.constants.RSA_PKCS1_OAEP_PADDING,
-    oaepHash: "sha256",
-  },
-  Buffer.from(encryptedData, "base64")
-);
+// console.log(data)
 
-const data = decryptedData.toString('utf-8')
-console.log(data)
+
+export function decrypt_password(val:string):string{
+  const decryptedData = crypto.privateDecrypt(
+    {
+      key: privateKey,
+      padding: crypto.constants.RSA_PKCS1_OAEP_PADDING,
+      oaepHash: "sha256",
+    },
+    Buffer.from(val, "base64")
+  );
+  const data = decryptedData.toString('utf-8')
+  return data
+}

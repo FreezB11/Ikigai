@@ -7,6 +7,7 @@ import login from './view/login'
 import home from './view/home'
 import db from './db'
 import { encrypt_password } from './crypto/encrypt'
+import { decrypt_password } from './crypto/decrypt'
 import { User } from './model/user.model'
 import * as color from 'colors'
 import * as fs from 'fs'
@@ -63,16 +64,16 @@ app.post('/login',(req:Request,res:Response,next:NextFunction)=>{
         const id = db.crypt(mail)
         
         const obj = yaml.parse(file)
-        const t3 = obj.id.pswd
+        const t3 = obj.id?.pswd
 
-        // if (t3 == encrypt_password(password)){
-        //     res.status(400).json({message:"login success"})
-        // }
-        // else{
-        //     res.status(400).json({message:"login failed"})
-        // }
+        if (t3 == decrypt_password(password)){
+            res.status(400).json({message:"login success"})
+        }
+        else{
+            res.status(400).json({message:"login failed"})
+        }
 
-        // // res.redirect('/db')
+        // res.redirect('/db')
     }
     else{
         res.status(400).json({message:"User doesn't exist"})
