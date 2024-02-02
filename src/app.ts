@@ -61,19 +61,19 @@ app.post('/login',(req:Request,res:Response,next:NextFunction)=>{
 
     if (val == true){
         const file = fs.readFileSync('src/db/usr_data.yaml', 'utf8')
-        const id = db.crypt(mail)
+        const id:string = db.crypt(mail)
         
         const obj = yaml.parse(file)
-        const t3 = obj.id?.pswd
-
-        if (t3 == decrypt_password(password)){
-            res.status(400).json({message:"login success"})
-        }
-        else{
-            res.status(400).json({message:"login failed"})
-        }
+        console.log(obj)
+        //if (t3 == decrypt_password(password)){
+        //    res.status(400).json({message:"login success"})
+        //}
+        //else{
+        //    res.status(400).json({message:"login failed"})
+        //}
 
         // res.redirect('/db')
+        console.log("func executing!....")
     }
     else{
         res.status(400).json({message:"User doesn't exist"})
