@@ -42,12 +42,12 @@ app.post('/register',(req:Request,res:Response,next:NextFunction)=>{
     const username = req.body.username
     const mail = req.body.email
     const password = req.body.password
-
+    const fname = db.crypt(mail)
     if (username == 0 || mail == 0 || password == 0){
         res.status(400).json({message:"field mandatory"})
     }
     else{      
-        db.add('usr_data',username,mail,password)
+        db.add(fname,username,mail,password)
         res.redirect('/db')
     }
 })

@@ -28,7 +28,7 @@ function add(fname: string, username:string,mail:string,password:string){
   const id:string = crypt(mail)
   const hash_password = encrypt_password(password)
 
-  const data =`${id}:
+  const data =`
   name: ${username}
   email: ${mail}
   pswd: ${hash_password}
