@@ -24,16 +24,13 @@ function crypt(val:string):string{
 }
 
 function add_usr(fname: string, username:string,mail:string,password:string){
-
   const id:string = crypt(mail)
   const hash_password = encrypt_password(password)
-
   const data =`
   name: ${username}
   email: ${mail}
   pswd: ${hash_password}
   `
-
   fs.appendFile(
     path.join(__dirname, '/db', `${fname}.yaml`), data ,
     err => {
@@ -50,6 +47,18 @@ function check_usr(str:string){
   return check
 }
 
+function delete_usr(mail:string){
+  const usr:string = crypt(mail)
+  fs.unlink(`src/db/${usr}.yaml`, function (err) {
+    if (err) throw err;
+    // if no error, file has been deleted successfully
+    console.log('File deleted!');
+  });
+}
+
+function verify_usr(mail:string,password:string){
+  
+}
 
 // delete file named 'sample.txt'
 // fs.unlink('sample.txt', function (err) {
@@ -58,4 +67,4 @@ function check_usr(str:string){
 //   console.log('File deleted!');
 // });
 
-export default {add_usr,crypt,check_usr} as const;
+export default {add_usr,crypt,check_usr,delete_usr} as const;

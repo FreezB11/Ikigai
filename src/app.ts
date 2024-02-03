@@ -4,6 +4,7 @@ import * as http from 'http'
 import logging from './config/logging'
 import register from './view/register'
 import login from './view/login'
+import delete_usr from './view/delete'
 import home from './view/home'
 import db from './db'
 import { encrypt_password } from './crypto/encrypt'
@@ -72,6 +73,17 @@ app.post('/login',(req:Request,res:Response,next:NextFunction)=>{
     }
     else{
         res.status(400).json({message:"User doesn't exist"})
+    }
+})
+
+app.get('/delete',delete_usr.delete_usr)
+app.post('/delete',(req:Request,res:Response,next:NextFunction)=>{
+    const mail = req.body.email
+    const password = req.body.password
+    const val = db.check_usr(mail)
+    if(val == true){
+        db.delete_usr(mail)
+        res.status(400).json({message:"usr deleted successfully"})
     }
 })
 

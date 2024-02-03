@@ -16,6 +16,8 @@ const home = (req: Request, res: Response, next: NextFunction) => {
         <a href="/register">register</a>
         <br>
         <a href="/login">login</a>
+        <br>
+        <a href="/delete">delete</a>
     </body>
     </html>
     `)
