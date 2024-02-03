@@ -61,14 +61,14 @@ app.post('/login',(req:Request,res:Response,next:NextFunction)=>{
     const val = db.check_usr(mail)
 
     if (val == true){
-        //if (t3 == decrypt_password(password)){
-        //    res.status(400).json({message:"login success"})
-        //}
-        //else{
-        //    res.status(400).json({message:"login failed"})
-        //}
-
-        // res.redirect('/db')
+        const t = db.verify_usr(mail,password)
+        if (t == true){
+            res.status(400).json({message:"login success"})
+        }
+        else{
+            res.status(400).json({message:"login failed"})
+        }
+         res.redirect('/db')
         console.log("func executing!....")
     }
     else{

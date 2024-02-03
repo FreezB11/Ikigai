@@ -4,7 +4,9 @@ import * as path from 'path'
 import * as crypto from 'crypto'
 import * as yaml from 'yaml'
 import { encrypt_password } from './crypto/encrypt'
+import { decrypt_password } from './crypto/decrypt';
 import {readFileSync, promises as fsPromises} from 'fs'
+import { isUtf8 } from 'buffer';
 
 
 function show_usrs(){
@@ -62,7 +64,17 @@ function delete_usr(mail:string){
 
 function verify_usr(mail:string,password:string){
   const email = crypt(mail)
-  const pswd = encrypt_password(password)
+  // const pswd = decrypt_password(password)
+  const file = fs.readFileSync(`src/db/${email}.yaml`,'utf8')
+  let obj = yaml.parse(file)
+  const pass = obj.pswd
+  const pswd = decrypt_password(pass) 
+  if(pswd == password){
+    return true
+  } 
+  else{
+    return false
+  }
 }
 
 export default {

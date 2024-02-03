@@ -25,6 +25,8 @@ const register = (req: Request, res: Response, next: NextFunction) => {
             <input type="password" name="password">
             <button type="submit">Register</button>
         </form>
+        <br>
+        <a href="/login">login</a>
     </div>
     </body>
     </html>
