@@ -61,15 +61,9 @@ function delete_usr(mail:string){
 }
 
 function verify_usr(mail:string,password:string){
-  
+  const email = crypt(mail)
+  const pswd = encrypt_password(password)
 }
-
-// delete file named 'sample.txt'
-// fs.unlink('sample.txt', function (err) {
-//   if (err) throw err;
-//   // if no error, file has been deleted successfully
-//   console.log('File deleted!');
-// });
 
 export default {
   add_usr,
