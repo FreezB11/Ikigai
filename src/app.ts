@@ -57,7 +57,7 @@ app.get('/login',login.login)
 app.post('/login',(req:Request,res:Response,next:NextFunction)=>{
     const mail = req.body.email
     const password = req.body.password
-    const val = db.check(mail)
+    const val = db.check_usr(mail)
 
     if (val == true){
         //if (t3 == decrypt_password(password)){

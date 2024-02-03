@@ -43,12 +43,10 @@ function add(fname: string, username:string,mail:string,password:string){
   );
 }
 
-function check(str:string){
+function check_usr(str:string){
   const id:string = crypt(str)
-  console.log(id)
   const check = fs.existsSync(`src/db/${id}.yaml`)
   console.log(check)
-  
   return check
 }
 
@@ -60,4 +58,4 @@ function check(str:string){
 //   console.log('File deleted!');
 // });
 
-export default {add,crypt,check} as const;
+export default {add,crypt,check_usr} as const;
