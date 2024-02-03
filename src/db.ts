@@ -23,7 +23,7 @@ function crypt(val:string):string{
   return hash
 }
 
-function add(fname: string, username:string,mail:string,password:string){
+function add_usr(fname: string, username:string,mail:string,password:string){
 
   const id:string = crypt(mail)
   const hash_password = encrypt_password(password)
@@ -58,4 +58,4 @@ function check_usr(str:string){
 //   console.log('File deleted!');
 // });
 
-export default {add,crypt,check_usr} as const;
+export default {add_usr,crypt,check_usr} as const;

@@ -47,7 +47,7 @@ app.post('/register',(req:Request,res:Response,next:NextFunction)=>{
         res.status(400).json({message:"field mandatory"})
     }
     else{      
-        db.add(fname,username,mail,password)
+        db.add_usr(fname,username,mail,password)
         res.redirect('/db')
     }
 })
