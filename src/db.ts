@@ -45,11 +45,11 @@ function add(fname: string, username:string,mail:string,password:string){
 
 function check(str:string){
   const id:string = crypt(str)
-  const contents = fs.readFileSync('src/db/usr_data.yaml','utf8')
-  const result = contents.includes(id)
-
-  return result
-
+  console.log(id)
+  const check = fs.existsSync(`src/db/${id}.yaml`)
+  console.log(check)
+  
+  return check
 }
 
 

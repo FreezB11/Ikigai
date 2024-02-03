@@ -60,11 +60,6 @@ app.post('/login',(req:Request,res:Response,next:NextFunction)=>{
     const val = db.check(mail)
 
     if (val == true){
-        const file = fs.readFileSync('src/db/usr_data.yaml', 'utf8')
-        const id:string = db.crypt(mail)
-        
-        const obj = yaml.parse(file)
-        console.log(obj)
         //if (t3 == decrypt_password(password)){
         //    res.status(400).json({message:"login success"})
         //}
