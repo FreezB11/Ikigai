@@ -1,15 +1,19 @@
-const testFolder = './src/';
+const db = './src/db';
 import * as fs from 'fs'
 import * as path from 'path'
 import * as crypto from 'crypto'
 import * as yaml from 'yaml'
 import { encrypt_password } from './crypto/encrypt'
 import {readFileSync, promises as fsPromises} from 'fs'
-// fs.readdir(testFolder, (err: any, files: any[]) => {
-//   files.forEach(file => {
-//     console.log(file); ///// here decryption will be done
-//   });
-// });
+
+
+function show_usrs(){
+  fs.readdir(db, (err: any, files: any[]) => {
+    files.forEach(file => {
+      console.log(file); ///// here decryption will be done
+    });
+  });
+}
 
 const publicKey = Buffer.from(
   fs.readFileSync("src/key/public.pem", { encoding: "utf-8" })
@@ -67,4 +71,11 @@ function verify_usr(mail:string,password:string){
 //   console.log('File deleted!');
 // });
 
-export default {add_usr,crypt,check_usr,delete_usr} as const;
+export default {
+  add_usr,
+  crypt,
+  check_usr,
+  delete_usr,
+  show_usrs,
+  verify_usr
+} as const;
