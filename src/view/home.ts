@@ -15,9 +15,7 @@ const home = (req: Request, res: Response, next: NextFunction) => {
     <body>
     <div class="navbar">
         <a href="/register">register</a>
-        <br>
         <a href="/login">login</a>
-        <br>
         <a href="/delete">delete</a>
     </div>
     </body>
