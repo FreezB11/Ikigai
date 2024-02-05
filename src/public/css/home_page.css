@@ -20,7 +20,13 @@ body{
     color: rgb(255, 255, 255);
     font-family: cursive;
     font-size: 20px;
-    
+
     margin-left: 10px;
     margin-right: 10px;
+}
+
+.phone {
+    background-color: black;
+    width: 480px;
+    height: 720px;
 }
