@@ -18,6 +18,9 @@ const home = (req: Request, res: Response, next: NextFunction) => {
         <a href="/login">login</a>
         <a href="/delete">delete</a>
     </div>
+    <div class="phone">
+        
+    </div>
     </body>
     </html>
     `)
