@@ -2,9 +2,10 @@ body{
     background-image: url(image/back2.png);
     background-repeat: no-repeat;
     background-size: cover;
+    margin: 0;
 }
 
-.navbar{
+/* .navbar{
     height: 25pt;
     width:auto;
     margin: 0;
@@ -12,6 +13,11 @@ body{
     background-color:black;
     text-align: right;
    
+} */
+
+.navbar{
+    width:auto;
+    background-color: black;
 }
 
 .navbar a{
