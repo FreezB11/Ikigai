@@ -22,15 +22,15 @@ import {readFileSync, promises as fsPromises} from 'fs';
   
 // checkIfContainsAsync('test/test.yaml', 'Jnet');
 
-function check(str:string){
-  const contents = fs.readFileSync('src/db/usr_data.yaml','utf8')
+// function check(str:string){
+//   const contents = fs.readFileSync('src/db/usr_data.yaml','utf8')
 
-  const result = contents.includes(str)
-  console.log(result)
+//   const result = contents.includes(str)
+//   console.log(result)
 
-}
+// }
 
-check('yah')
+// check('yah')
 
 
 const file = fs.readFileSync('test/test.yaml', 'utf8')
@@ -38,6 +38,8 @@ const file = fs.readFileSync('test/test.yaml', 'utf8')
 let yamlString = 'test.yaml'
 
 let obj = yaml.parse(file);
-let name = obj.user.name;
+let nm = obj.user.name
+
+// let name = obj.user.name;
 
 // console.log(name);
