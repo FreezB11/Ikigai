@@ -5,15 +5,16 @@ body{
     margin: 0;
 }
 
-/* .navbar{
+.navbar{
     height: 25pt;
     width:auto;
     margin: 0;
-    padding: 0;
+    padding-top: 6px;
+    padding-right: 5px;
     background-color:black;
     text-align: right;
    
-} */
+}
 
 .navbar{
     width:auto;
