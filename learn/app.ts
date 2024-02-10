@@ -1,7 +1,7 @@
 import mongoose,{Schema, Model, model} from "mongoose";
 import { string } from "yaml/dist/schema/common/string";
 import { UUID } from "mongodb";
-import dotenv from 'dotenv'
+import dotenv from 'dotenv';
 dotenv.config({path: './learn/.env'})
 
 // console.log(process.env.URI)
