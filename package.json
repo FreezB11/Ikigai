@@ -4,6 +4,7 @@
   "description": "",
   "main": "src/app.ts",
   "scripts": {
+    "learn": "nodemon learn/app.ts",
     "yaml-test": "nodemon test/yaml.test.ts",
     "test": "nodemon test/test.ts",
     "keygen": "nodemon src/crypto/keygen.ts",
@@ -23,12 +24,14 @@
   "devDependencies": {
     "@types/express": "^4.17.17",
     "@types/jsonfile": "^6.1.1",
+    "@types/mongoose": "^5.11.97",
     "@types/node": "^20.4.1",
-    "nodemon": "^2.0.22"
+    "nodemon": "^3.0.3"
   },
   "dependencies": {
     "@types/colors": "^1.2.1",
     "@types/dotenv": "^8.2.0",
+    "@types/mongodb": "^4.0.7",
     "@types/yaml": "^1.9.7",
     "colors": "^1.4.0",
     "dotenv": "^16.3.1",
@@ -36,6 +39,8 @@
     "express": "^4.18.2",
     "json": "^11.0.0",
     "jsonfile": "^6.1.0",
+    "mongodb": "^6.3.0",
+    "mongoose": "^8.1.1",
     "ts-node": "^10.9.1",
     "typescript": "^5.1.6",
     "yaml": "^2.3.1"
