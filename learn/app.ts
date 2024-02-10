@@ -10,8 +10,11 @@ mongoose.connect(URI)
 const Usr_schema = new Schema  ({
     name: String,
     email : String,
-    pswd: string,
-    _id: UUID,
+    pswd: String
 })
 
 const Usr = model("Usr",Usr_schema)
+
+const test = new Usr({name:'hsay',email:'test@test.com',pswd:'#khddhsfkfskfj'})
+test.save()
+console.log(test)
