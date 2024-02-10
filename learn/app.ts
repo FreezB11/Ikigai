@@ -1,9 +1,12 @@
 import mongoose,{Schema, Model, model} from "mongoose";
-import dotenv from 'dotenv';
 import { string } from "yaml/dist/schema/common/string";
 import { UUID } from "mongodb";
+import dotenv from 'dotenv'
+dotenv.config({path: './learn/.env'})
 
-const URI= `mongodb+srv://yashraj:yash0403@dbcluster.eouqf7t.mongodb.net/?retryWrites=true&w=majority`;
+// console.log(process.env.URI)
+
+const URI:string = `${process.env.URI}`;
 
 mongoose.connect(URI)
 
