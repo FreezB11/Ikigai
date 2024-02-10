@@ -1,5 +1,10 @@
 import dotenv from 'dotenv';
 
-dotenv.config();
+dotenv.config({path:"./test/.env"});
 
-console.log(process.env.PORT)
+
+
+
+const t =process.env.PORT;
+
+console.log(t)

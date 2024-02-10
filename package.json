@@ -4,9 +4,10 @@
   "description": "",
   "main": "src/app.ts",
   "scripts": {
+    "ipa": "nodemon ipa/www/www.ts",
     "learn": "nodemon learn/app.ts",
     "yaml-test": "nodemon test/yaml.test.ts",
-    "test": "nodemon test/test.ts",
+    "test": "nodemon test/env.test.ts",
     "keygen": "nodemon src/crypto/keygen.ts",
     "debug": "node inspect src/app.ts",
     "start": "nodemon www/www.ts"
