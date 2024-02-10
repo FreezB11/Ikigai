@@ -2,12 +2,13 @@ import express, { NextFunction, Request, Response } from 'express'
 import * as http from 'http'
 import * as color from 'colors'
 import logging from './config/logging'
-
+import auth_routr from './routr/routr.auth'
 color.enable()
 
 const NAMESPACE = 'Server'
 const app = express()
 const httpServer = http.createServer(app)
+
 
 app.use((req, res, next) => {
     /** Log the req */
@@ -21,6 +22,6 @@ app.use((req, res, next) => {
 
 app.use(express.json());       
 app.use(express.urlencoded({extended: true}));
-
+app.use('/auth',auth_routr)
 
 export = app; httpServer;
