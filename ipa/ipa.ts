@@ -3,6 +3,7 @@ import * as http from 'http'
 import * as color from 'colors'
 import logging from './config/logging'
 import auth_routr from './routr/routr.auth'
+import merchant_routr from './routr/routr.merchant'
 color.enable()
 
 const NAMESPACE = 'Server'
@@ -23,5 +24,6 @@ app.use((req, res, next) => {
 app.use(express.json());       
 app.use(express.urlencoded({extended: true}));
 app.use('/auth',auth_routr)
+app.use('/merchant',merchant_routr)
 
 export = app; httpServer;
