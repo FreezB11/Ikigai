@@ -1,6 +1,4 @@
 import mongoose,{Schema, Model, model} from "mongoose";
-import { string } from "yaml/dist/schema/common/string";
-import { UUID } from "mongodb";
 import dotenv from 'dotenv';
 dotenv.config({path: './learn/.env'})
 
@@ -14,10 +12,10 @@ const Usr_schema = new Schema  ({
     name: String,
     email : String,
     pswd: String
-})
+},{collection:'users'})
 
-const Usr = model("Usr",Usr_schema)
+const Usr = model("startup.merchants",Usr_schema)
 
-const test = new Usr({name:'hsay',email:'test@test.com',pswd:'#khddhsfkfskfj'})
-test.save()
-console.log(test)
+const Users = new Usr({name:'hsay',email:'test@test.com',pswd:'#khddhsfkfskfj'})
+Users.save()
+console.log(Users)
