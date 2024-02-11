@@ -10,7 +10,14 @@ const usr_details = new Schema({
     phone_num:{type:Number,required:true},
     name: {type:String,required:true},
     email:{type:String,unique:true,required:true},
-
-    verified:{type:Number}
+    authentication:{
+        password: {type: String, required: true, select:false},
+        salt:{type :String,select:false},
+        sessionToken:{ type:String, select:false},
+    }
 
 })
+
+const UsrModel = model('User',usr_details)
+
+export default UsrModel
