@@ -8,4 +8,3 @@ const usr_byseesiontoken = (sessionToken: String)=> UsrModel.findOne({
 })
 
 const usr_byid = (id:String)=> UsrModel.findOne(id);
-const create_usr
