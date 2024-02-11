@@ -1,12 +1,6 @@
 import mongoose,{Schema,Model,model} from "mongoose";
 
-enum roles{
-    admin = 'admin',
-    seller = 'merchant',
-    buyer = 'customer'
-}
-
-const usr_details = new Schema({
+const usrModel = new Schema({
     phone_num:{type:Number,required:true},
     name: {type:String,required:true},
     email:{type:String,unique:true,required:true},
@@ -14,10 +8,21 @@ const usr_details = new Schema({
         password: {type: String, required: true, select:false},
         salt:{type :String,select:false},
         sessionToken:{ type:String, select:false},
-    }
-
+    },
+    Orders:{
+        orderHistory:{
+            productId:String,
+            date:Date,
+        },
+        currentOrders:{
+            productId:String,
+            date:Date,
+            deliveryStatus:String,
+        }
+    },
+    Wishlist:[String],
 })
 
-const UsrModel = model('User',usr_details)
+const UsrModel = model('User',usrModel)
 
 export default UsrModel
