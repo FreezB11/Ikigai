@@ -23,11 +23,11 @@ const NAMESPACE = 'Server'
 const app = express()
 const httpServer = http.createServer(app)
 const URI:string = `${process.env.URI}`;
-const connection = mongoose.createConnection(URI)
 
-connection.on('connected',()=>{
-    console.log("connected to db!!")
-})
+// DB setup 
+const connection = mongoose.createConnection(URI);
+connection.on('connected',()=>{console.log("connected to db!!")})
+connection.on('error', (error: Error) => console.log(error));
 
 
 app.use(session({
