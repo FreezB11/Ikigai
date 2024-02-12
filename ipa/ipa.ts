@@ -1,6 +1,8 @@
 import express, { NextFunction, Request, Response } from 'express'
 import mongoose from 'mongoose'
 import * as http from 'http'
+import passport from 'passport'
+import passportLocal from "passport-local";
 import * as color from 'colors'
 import logging from './config/logging'
 import auth_routr from './routr/routr.auth'
@@ -9,6 +11,7 @@ import { BodyParser } from 'body-parser'
 import cookieParser from 'cookie-parser'
 import compression from 'compression'
 import cors from 'cors'
+import bcrpt from 'bcrypt'
 import dotenv from 'dotenv'
 
 color.enable()
@@ -26,12 +29,9 @@ connection.on('connected',()=>{
 
 
 
-app.use(cors({
-    credentials:true,
-}))
+app.use(cors({credentials:true,}))
 app.use(cookieParser())
 app.use(compression())
-
 
 app.use((req, res, next) => {
     /** Log the req */
