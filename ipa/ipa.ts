@@ -1,4 +1,5 @@
 import express, { NextFunction, Request, Response } from 'express'
+import session from 'express-session'
 import mongoose from 'mongoose'
 import * as http from 'http'
 import passport from 'passport'
@@ -7,6 +8,7 @@ import * as color from 'colors'
 import logging from './config/logging'
 import auth_routr from './routr/routr.auth'
 import merchant_routr from './routr/routr.merchant'
+import UsrModel from './models/usr.model'
 import { BodyParser } from 'body-parser'
 import cookieParser from 'cookie-parser'
 import compression from 'compression'
@@ -28,10 +30,19 @@ connection.on('connected',()=>{
 })
 
 
-
+app.use(session({
+    secret:`${process.env.SECRET}`,
+    resave:false,
+    saveUninitialized:true,
+}))
+app.use(express.urlencoded({extended:false}));
 app.use(cors({credentials:true,}))
 app.use(cookieParser())
 app.use(compression())
+app.use(express.json());                      
+app.use(express.urlencoded({extended: true}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use((req, res, next) => {
     /** Log the req */
@@ -43,13 +54,12 @@ app.use((req, res, next) => {
     next();
 })
 
+
 app.get('/',(req:Request,res:Response)=>{
     res.send("hello")
 })
 
-app.use(express.json());                      
 
-app.use(express.urlencoded({extended: true}));
 app.use('/auth',auth_routr)
 app.use('/merchant',merchant_routr)
 
