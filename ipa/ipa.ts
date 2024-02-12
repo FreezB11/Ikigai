@@ -1,4 +1,5 @@
 import express, { NextFunction, Request, Response } from 'express'
+import mongoose from 'mongoose'
 import * as http from 'http'
 import * as color from 'colors'
 import logging from './config/logging'
@@ -8,12 +9,21 @@ import { BodyParser } from 'body-parser'
 import cookieParser from 'cookie-parser'
 import compression from 'compression'
 import cors from 'cors'
+import dotenv from 'dotenv'
 
 color.enable()
+dotenv.config({path:'./ipa/.env'})
 
 const NAMESPACE = 'Server'
 const app = express()
 const httpServer = http.createServer(app)
+const URI:string = `${process.env.URI}`;
+const connection = mongoose.createConnection(URI)
+
+connection.on('connected',()=>{
+    console.log("connected to db!!")
+})
+
 
 
 app.use(cors({
