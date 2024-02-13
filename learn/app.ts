@@ -14,8 +14,8 @@ const Usr_schema = new Schema  ({
     pswd: String
 },{collection:'users'})
 
-const Usr = model("startup.merchants",Usr_schema)
+const Usr = model("Users",Usr_schema)
 
-const Users = new Usr({name:'hsay',email:'test@test.com',pswd:'#khddhsfkfskfj'})
+const Users = new Usr({name:'hsay22',email:'test22@test.com',pswd:'#khddhsf22kfskfj'})
 Users.save()
 console.log(Users)

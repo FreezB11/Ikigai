@@ -21,7 +21,7 @@ const usrModel = new Schema({
         }
     },
     Wishlist:[String],
-})
+},{collection:'users'})
 
 const UsrModel = model('User',usrModel)
 

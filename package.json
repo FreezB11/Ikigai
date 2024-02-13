@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/app.ts",
   "scripts": {
-    "ipa": "nodemon ipa/www/www.ts",
+    "ipa": "nodemon ipa/src/index.ts",
     "learn": "nodemon learn/app.ts",
     "yaml-test": "nodemon test/yaml.test.ts",
     "test": "nodemon test/env.test.ts",
