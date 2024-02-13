@@ -24,11 +24,6 @@ const app = express()
 const httpServer = http.createServer(app)
 const URI:string = `${process.env.URI}`;
 
-// DB setup 
-const connection = mongoose.createConnection(URI);
-connection.on('connected',()=>{console.log("connected to db!!")})
-connection.on('error', (error: Error) => console.log(error));
-
 
 app.use(session({
     secret:`${process.env.SECRET}`,
@@ -62,5 +57,12 @@ app.get('/',(req:Request,res:Response)=>{
 
 app.use('/auth',auth_routr)
 app.use('/merchant',merchant_routr)
+
+// DB setup 
+const connection = mongoose.createConnection(URI);
+connection.on('connected',()=>{console.log("connected to db!!")})
+connection.on('error', (error: Error) => console.log(error));
+
+
 
 export = app; httpServer;

@@ -1,5 +1,5 @@
 import express,{Request,Response} from 'express';
-
+import UsrModel from '../models/usr.model';
 import { getUserByEmail, createUser } from './db.controller';
 
 
@@ -23,13 +23,13 @@ const register = async (req: Request, res: Response) => {
       return res.sendStatus(400);
     }
 
-    const existingUser = await getUserByEmail(email);
+    //const existingUser = await getUserByEmail(email);
   
-    if (existingUser) {
-      return res.sendStatus(400);
-    }
+    // if (existingUser) {
+    //   return res.sendStatus(400);
+    // }
 
-
+  //  const user = new UsrModel({"phone_num":89898989898,"name":"yashashas","email":"yasaas@yasgy","password":"kjadhkjasdkas"})
 
     const user = await createUser({
       phone_num,

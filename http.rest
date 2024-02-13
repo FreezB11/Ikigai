@@ -1,9 +1,9 @@
-POST http://localhost:6900/auth/register 
+POST http://localhost:6900/auth/register/ 
 content-type: application/json
 
 {
     "phone_num":989898989,
     "email":"test@test.com",
-    "username":"yashhh",
-    "password":"hahsahsh",
+    "name":"yashhh",
+    "password":"hahsahsh"
 }
