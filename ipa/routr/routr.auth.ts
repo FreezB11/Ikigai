@@ -1,5 +1,5 @@
 import express, { NextFunction, Request, Response,Router } from 'express'
-import { login, register } from '../controller/auth.controller';
+import controllr from '../controller/auth.controller';
 const auth_routr = Router();
 
 enum routr{
@@ -14,11 +14,8 @@ auth_routr.get('/',(req:Request,res:Response)=>{
     res.send("helllo")
 })
 
-auth_routr.get(routr.login,(req:Request,res:Response)=>{
-    res.send("welcome to login")
-})
-
-auth_routr.post(routr.register,register)
+auth_routr.post(routr.login,controllr.login)
+auth_routr.post(routr.register,controllr.register)
 
 auth_routr.get(routr.logout,(req:Request,res:Response)=>{
     res.send("this is logout page")

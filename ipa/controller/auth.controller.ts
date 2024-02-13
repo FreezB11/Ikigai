@@ -1,47 +1,25 @@
-import express from 'express';
+import express,{Request,Response} from 'express';
 
 import { getUserByEmail, createUser } from './db.controller';
-import { authentication, random } from '../helper';
 
-export const login = async (req: express.Request, res: express.Response) => {
+
+const login = async (req: Request, res: Response) => {
   try {
-    const { email, password } = req.body;
+    const {name,email,password}=req.body
 
-    if (!email || !password) {
-      return res.sendStatus(400);
-    }
+   
 
-    const user = await getUserByEmail(email).select('+authentication.salt +authentication.password');
-
-    if (!user) {
-      return res.sendStatus(400);
-    }
-
-    const expectedHash = authentication(user.authentication!.salt!, password);
-    
-    if (user.authentication!.password != expectedHash) {
-      return res.sendStatus(403);
-    }
-
-    const salt = random();
-    user.authentication!.sessionToken = authentication(salt, user._id.toString());
-
-    await user.save();
-
-    res.cookie('ANTONIO-AUTH', user.authentication!.sessionToken, { domain: 'localhost', path: '/' });
-
-    return res.status(200).json(user).end();
   } catch (error) {
     console.log(error);
-    return res.sendStatus(400);
+    return res.sendStatus(400)
   }
 };
 
-export const register = async (req: express.Request, res: express.Response) => {
+const register = async (req: Request, res: Response) => {
   try {
-    const { email, password, username } = req.body;
+    const {phone_num,name,email,password}=req.body
 
-    if (!email || !password || !username) {
+    if (!email || !password || !name) {
       return res.sendStatus(400);
     }
 
@@ -51,19 +29,27 @@ export const register = async (req: express.Request, res: express.Response) => {
       return res.sendStatus(400);
     }
 
-    const salt = random();
+
+
     const user = await createUser({
+      phone_num,
       email,
-      username,
+      name,
       authentication: {
-        salt,
-        password: authentication(salt, password),
+        password: password,
       },
     });
 
     return res.status(200).json(user).end();
+
   } catch (error) {
     console.log(error);
-    return res.sendStatus(400);
+    return res.sendStatus(400)
   }
 }
+
+const logout = async (req:Request,res:Response)=>{
+
+}
+
+export default {login,register}
