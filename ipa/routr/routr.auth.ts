@@ -17,6 +17,8 @@ auth_routr.get('/',(req:Request,res:Response)=>{
 auth_routr.post(routr.login,controllr.login)
 auth_routr.post(routr.register,controllr.register)
 
+
+
 auth_routr.get(routr.logout,(req:Request,res:Response)=>{
     res.send("this is logout page")
 })

@@ -8,6 +8,7 @@ import * as color from 'colors'
 import logging from './config/logging'
 import auth_routr from './routr/routr.auth'
 import merchant_routr from './routr/routr.merchant'
+import usr_routr from './routr/routr.user'
 import UsrModel from './models/usr.model'
 import { BodyParser } from 'body-parser'
 import cookieParser from 'cookie-parser'
@@ -57,6 +58,7 @@ app.get('/',(req:Request,res:Response)=>{
 
 app.use('/auth',auth_routr)
 app.use('/merchant',merchant_routr)
+app.use('/user',usr_routr)
 
 app.use('/register',(req:Request,res:Response)=>{
     res.json({"message":"success"})
