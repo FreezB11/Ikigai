@@ -5,6 +5,6 @@ content-type: application/json
     "phone_num":98989898,
     "name":"yashhh",
     "email":"yashraj@gmail.com",
-    "password":"hahsahsh",
+    "password":"123",
     "Wishlist":["hdaskdfhksd","dsjkfasjkd","sdjflaksjf"]
 }
