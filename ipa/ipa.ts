@@ -58,10 +58,13 @@ app.get('/',(req:Request,res:Response)=>{
 app.use('/auth',auth_routr)
 app.use('/merchant',merchant_routr)
 
+app.use('/register',(req:Request,res:Response)=>{
+    res.json({"message":"success"})
+})
+
 // DB setup 
-const connection = mongoose.createConnection(URI);
-connection.on('connected',()=>{console.log("connected to db!!")})
-connection.on('error', (error: Error) => console.log(error));
+const connection = mongoose.connect(URI);
+
 
 
 

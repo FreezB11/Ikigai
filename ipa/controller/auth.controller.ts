@@ -1,5 +1,4 @@
 import express,{Request,Response} from 'express';
-import UsrModel from '../models/usr.model';
 import { getUserByEmail, createUser } from './db.controller';
 
 
@@ -16,35 +15,33 @@ const login = async (req: Request, res: Response) => {
 };
 
 const register = async (req: Request, res: Response) => {
-  try {
-    const {phone_num,name,email,password}=req.body
+  try{
+  const {phone_num,name,email,password,Wishlist} = req.body
 
-    if (!email || !password || !name) {
-      return res.sendStatus(400);
-    }
+  if (!phone_num||!name||!email||!password){
+    return res.status(400).json({"message":"maybe u dindt fill all value"})
+  }
 
-    //const existingUser = await getUserByEmail(email);
+  const existingUser = await getUserByEmail(email);
   
-    // if (existingUser) {
-    //   return res.sendStatus(400);
-    // }
+  if (existingUser) {
+    return res.status(400).json({"message":"user already exist!"});
+  }
 
-  //  const user = new UsrModel({"phone_num":89898989898,"name":"yashashas","email":"yasaas@yasgy","password":"kjadhkjasdkas"})
+  const user = await createUser({
+    phone_num,
+    name,
+    email,
+    authentication:{
+      password
+    },
+    Wishlist
+  })
 
-    const user = await createUser({
-      phone_num,
-      email,
-      name,
-      authentication: {
-        password: password,
-      },
-    });
-
-    return res.status(200).json(user).end();
-
-  } catch (error) {
-    console.log(error);
-    return res.sendStatus(400)
+  return res.status(200).json(user).end();
+  }
+  catch(error){
+    console.log(error)
   }
 }
 
