@@ -20,6 +20,7 @@ const usrModel = new Schema({
         }
     },
     Wishlist:[String],
+    Cart:[String]
 },{collection:'users'})
 
 const UsrModel = model('User',usrModel)
