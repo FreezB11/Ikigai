@@ -9,6 +9,7 @@ import logging from './config/logging'
 import auth_routr from './routr/routr.auth'
 import merchant_routr from './routr/routr.merchant'
 import usr_routr from './routr/routr.user'
+import product_routr from './routr/routr.product'
 import UsrModel from './models/usr.model'
 import { BodyParser } from 'body-parser'
 import cookieParser from 'cookie-parser'
@@ -24,7 +25,6 @@ const NAMESPACE = 'Server'
 const app = express()
 const httpServer = http.createServer(app)
 const URI:string = `${process.env.URI}`;
-
 
 app.use(session({
     secret:`${process.env.SECRET}`,
@@ -52,22 +52,16 @@ app.use((req, res, next) => {
 
 
 app.get('/',(req:Request,res:Response)=>{
-    res.send("hello")
+    res.send("welcome")
 })
-
 
 app.use('/auth',auth_routr)
 app.use('/merchant',merchant_routr)
 app.use('/user',usr_routr)
+app.use('/product',product_routr)
 
-app.use('/register',(req:Request,res:Response)=>{
-    res.json({"message":"success"})
-})
 
 // DB setup 
 const connection = mongoose.connect(URI);
-
-
-
 
 export = app; httpServer;
