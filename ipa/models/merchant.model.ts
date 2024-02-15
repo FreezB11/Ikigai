@@ -7,7 +7,7 @@ const merchantModel = new Schema({
     email:{type:String,unique:true,required:true},
     authentication:{
         password: {type: String, required: true, select:false},
-        salt:{type :String,select:false},
         sessionToken:{ type:String, select:false},
     },
-})
+    ProductEnlisted :[String]
+},{collection:'merchants'})
