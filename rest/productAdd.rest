@@ -1,0 +1,11 @@
+POST http://localhost:6900/product/add
+Content-Type: application/json
+
+{
+    "merchant_id":"yash4rfokkfjs",
+    "product_id":"6666-5342-3322",
+    "name":"Puma Shoes",
+    "price":6400,
+    "category_id":"800000-434-35454",
+    "Images":["4511114","225644","4444561111"]
+}
