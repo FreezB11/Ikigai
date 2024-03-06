@@ -5,8 +5,7 @@ import * as crypto from 'crypto'
 import * as yaml from 'yaml'
 import { encrypt_password } from './crypto/encrypt'
 import { decrypt_password } from './crypto/decrypt';
-import {readFileSync, promises as fsPromises} from 'fs'
-import { isUtf8 } from 'buffer';
+
 
 
 function show_usrs(){
