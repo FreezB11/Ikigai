@@ -1,11 +1,10 @@
 {
   "name": "yugen",
-  "version": "1.2.1",
+  "version": "2.0.0",
   "description": "",
   "main": "src/app.ts",
   "scripts": {
     "ipa": "nodemon ipa/www/www.ts",
-    "learn": "nodemon learn/app.ts",
     "yaml-test": "nodemon test/yaml.test.ts",
     "test": "nodemon test/env.test.ts",
     "keygen": "nodemon src/crypto/keygen.ts",

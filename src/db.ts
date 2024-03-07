@@ -76,6 +76,7 @@ function verify_usr(mail:string,password:string){
   }
 }
 
+
 export default {
   add_usr,
   crypt,

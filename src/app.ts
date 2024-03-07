@@ -47,7 +47,13 @@ app.post('/register',(req:Request,res:Response,next:NextFunction)=>{
     if (username == 0 || mail == 0 || password == 0){
         res.status(400).json({message:"field mandatory"})
     }
+    if (db.check_usr(mail) == true){
+        res.status(400).json({message:"already exists!!"})
+    }
     else{      
+        if (db.check_usr(mail) == true){
+            res.status(400).json({message:"already exists!!"})
+        }
         db.add_usr(fname,username,mail,password)
         res.redirect('/db')
     }
