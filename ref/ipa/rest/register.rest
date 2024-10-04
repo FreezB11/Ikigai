@@ -1,0 +1,10 @@
+POST http://localhost:6900/auth/register/ 
+content-type: application/json
+
+{
+    "phone_num":9895343422298,
+    "name":"raosab",
+    "email":"test@test.com",
+    "password":"1234",
+    "Wishlist":["hdaskdfhksd","dsjkfasjkd","sdjflaksjf"]
+}
