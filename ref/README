@@ -1,7 +1,0 @@
-## IKIGAI
-
-Basic setup to run the server
-```bash
-    cd src && mkdir key && mkdir db && cd ..
-    npm run keygen ## this is to create the public and private key
-```

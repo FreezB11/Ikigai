@@ -1,6 +1,0 @@
-POST http://localhost:6900/product/search
-Content-Type: application/json
-
-{
-    "search":"Shoes"
-}
